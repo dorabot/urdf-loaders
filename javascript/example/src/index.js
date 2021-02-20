@@ -143,12 +143,8 @@ viewer.addEventListener('urdf-processed', () => {
             li.update = () => {
                 let degVal = joint.angle;
 
-                if (joint.jointType === 'revolute' || joint.jointType === 'continuous') {
-                    degVal *= RAD2DEG;
-                }
-
                 if (Math.abs(degVal) > 1) {
-                    degVal = degVal.toFixed(1);
+                    degVal = degVal.toFixed(2);
                 } else {
                     degVal = degVal.toPrecision(2);
                 }
@@ -162,14 +158,14 @@ viewer.addEventListener('urdf-processed', () => {
                     slider.min = -6.28;
                     slider.max = 6.28;
 
-                    input.min = -6.28 * RAD2DEG;
-                    input.max = 6.28 * RAD2DEG;
+                    input.min = -6.28;
+                    input.max = 6.28;
                 } else {
                     slider.min = joint.limit.lower;
                     slider.max = joint.limit.upper;
 
-                    input.min = joint.limit.lower * RAD2DEG;
-                    input.max = joint.limit.upper * RAD2DEG;
+                    input.min = joint.limit.lower;
+                    input.max = joint.limit.upper;
                 }
             };
 
@@ -192,7 +188,7 @@ viewer.addEventListener('urdf-processed', () => {
             });
 
             input.addEventListener('change', () => {
-                viewer.setJointValue(joint.name, input.value * DEG2RAD);
+                viewer.setJointValue(joint.name, input.value);
                 li.update();
             });
 
