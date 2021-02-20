@@ -14,14 +14,14 @@
 
         <div id="menu">
             <ul id="urdf-options">
-                <li urdf="../../urdf/T12/urdf/T12_flipped.URDF" color="#E91E63">ATHLETE</li>
+                <!-- <li urdf="../../urdf/T12/urdf/T12_flipped.URDF" color="#E91E63">ATHLETE</li>
                 <li urdf="../../urdf/TriATHLETE/urdf/TriATHLETE_flipped.URDF" color="#009688">TriATHLETE</li>
-                <li urdf="../../urdf/TriATHLETE_Climbing/urdf/TriATHLETE_flipped.URDF" color="#FFB300">TriATHLETE Climbing</li>
+                <li urdf="../../urdf/TriATHLETE_Climbing/urdf/TriATHLETE_flipped.URDF" color="#FFB300">TriATHLETE Climbing</li> -->
             </ul>
 
+            <div>Drag and drop a set of URDF files! <br/> (Chrome Only)</div>
             <div id="controls" class="hidden">
                 <div id="toggle-controls"></div>
-                <div>Drag and drop a set of URDF files! <br/> (Chrome Only)</div>
                 <div id="ignore-joint-limits" class="toggle">Ignore Joint Limits</div>
                 <div id="do-animate" class="toggle checked">Animate Joints</div>
                 <label>
@@ -31,14 +31,14 @@
                         <option value="-X">-X</option>
                         <option value="+Y">+Y</option>
                         <option value="-Y">-Y</option>
-                        <option value="+Z">+Z</option>
-                        <option value="-Z" selected>-Z</option>
+                        <option value="+Z" selected>+Z</option>
+                        <option value="-Z">-Z</option>
                     </select>
                 </label>
                 <ul></ul>
             </div>
         </div>
-        <urdf-viewer up="-Z" display-shadow tabindex="0"></urdf-viewer>
+        <urdf-viewer up="+Z" display-shadow tabindex="0"></urdf-viewer>
 
         <script src="./bundle/index.js"></script>
     </body>

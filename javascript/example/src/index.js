@@ -252,8 +252,8 @@ document.addEventListener('WebComponentsReady', () => {
         }
 
     };
-
-    document.querySelector('li[urdf]').dispatchEvent(new Event('click'));
+    setColor('#263238');
+    // document.querySelector('li[urdf]').dispatchEvent(new Event('click'));
 
     if (/javascript\/example\/build/i.test(window.location)) {
         viewer.package = '../../../urdf';
@@ -313,7 +313,7 @@ document.querySelectorAll('#urdf-options li[urdf]').forEach(el => {
         const urdf = e.target.getAttribute('urdf');
         const color = e.target.getAttribute('color');
 
-        viewer.up = '-Z';
+        viewer.up = '+Z';
         document.getElementById('up-select').value = viewer.up;
         viewer.urdf = urdf;
         animToggle.classList.add('checked');
