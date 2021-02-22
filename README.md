@@ -27,6 +27,12 @@ docker run -it --rm -p 9080:9080 web/urdf-loader
 
 3. Visit `localhost:9080/javascript/example/` to view the page
 
+### Compared with upstream repo
+
+- Set view axis as +Z instead of -Z
+
+- Use radian measure instead of angle measure
+
 # LICENSE
 
 The software is available under the [Apache V2.0 license](./LICENSE).
